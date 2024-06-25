@@ -17,13 +17,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
+            // listener for button start countdown
             bStart.setOnClickListener {
                 StartCountDownTimer(20000)
 
             }
         }
     }
-
+         // method for countdown
     private fun StartCountDownTimer(timeMillis:Long){
         timer?.cancel()
         timer = object :CountDownTimer(timeMillis, 1){
